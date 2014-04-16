@@ -19,7 +19,7 @@
   <%= form_for @invoice do |f| %>
     <script
       src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="pk_test_tm69dYnOwtqKhBrPHW8skqDC"
+      data-key="<%=STRIPE_PUBLIC_KEY%>"
       data-amount="<%=@invoice.amount.to_i * 100 %>"
       data-name="Hunter Dolan (Made By HD)"
       data-description="Invoice #<%=@invoice.invoice_id%>"
