@@ -35,3 +35,4 @@ gem 'stripe'
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 
 gem 'devise'
+gem 'puma'
