@@ -1,0 +1,118 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face {
+  font-family: 'geosanslightregular';
+  src: url("geosanslight-webfont.eot");
+  src: url("geosanslight-webfont.eot?#iefix") format("embedded-opentype"), url("geosanslight-webfont.woff") format("woff"), url("fonts/geosanslight-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  background-color: #27303C;
+  color: #FFF;
+  font-family: "Avenir Next", "geosanslightregular";
+  font-weight: 100;
+  padding: 100px; }
+
+h1, h2, h3, p {
+  font-weight: 100; }
+
+h1, #spread_the_love {
+  font-size: 48px; }
+
+strong {
+  opacity: 1;
+  font-weight: 400; }
+
+a {
+  color: #FFF;
+  text-decoration: none; }
+
+.stubborn_period {
+  position: relative;
+  left: -5px; }
+
+h1 .stubborn_period {
+  left: -15px; }
+
+ul {
+  list-style-type: none; }
+  ul li {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    ul li a span {
+      opacity: 0.2;
+      font-weight: 400;
+      -webkit-transition: opacity 1s ease;
+      -moz-transition: opacity 1s ease;
+      -o-transition: opacity 1s ease;
+      transition: opacity 1s ease; }
+    ul li a strong {
+      opacity: 1; }
+  ul li:hover span {
+    opacity: 1; }
+
+#heart {
+  position: absolute;
+  bottom: 100px;
+  right: 100px; }
+  #heart span {
+    opacity: 0.2;
+    font-weight: 400;
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    -o-transition: opacity 1s ease;
+    transition: opacity 1s ease; }
+  #heart strong {
+    opacity: 1; }
+  #heart a:hover span {
+    opacity: 1; }
+
+#spread_the_love {
+  position: relative;
+  opacity: 0;
+  background-color: #27303C;
+  padding-left: 10px;
+  left: -35px; }
+  #spread_the_love.ready {
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    -o-transition: opacity 1s ease;
+    transition: opacity 1s ease; }
+  #spread_the_love.show {
+    opacity: 1; }
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    padding: 10px;
+    margin-bottom: 20px; }
+
+  #heart {
+    position: static;
+    float: right; }
+
+  .stubborn_period {
+    display: none; }
+
+  h1, h2, h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0; }
+
+  span {
+    opacity: 1 !important; }
+
+  #spread_the_love {
+    display: none; } }

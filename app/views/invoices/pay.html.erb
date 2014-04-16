@@ -1,0 +1,29 @@
+
+
+<h2>Made By HD :: Pay Invoice <strong>#<%=@invoice.invoice_id%></strong></h2>
+
+<% [:invoice_id, :description, :amount, :invoicee_name, :invoicee_address, :status].each do |field| %>
+  
+  <div>
+    <h4><%= field.to_s.humanize %></h4>
+    <% if field == :amount %>
+      <p>$<%=@invoice.send(field)%>.00
+    <% else %>
+      <p><%= @invoice.send(field) %>
+    <% end %>
+  </div>
+
+<% end %>
+
+<% unless @invoice.paid? %>
+  <%= form_for @invoice do |f| %>
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="pk_test_tm69dYnOwtqKhBrPHW8skqDC"
+      data-amount="<%=@invoice.amount.to_i * 100 %>"
+      data-name="Hunter Dolan (Made By HD)"
+      data-description="Invoice #<%=@invoice.invoice_id%>"
+    >
+    </script>
+  <% end %>
+<% end %>

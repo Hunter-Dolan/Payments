@@ -1,0 +1,11 @@
+<h2 class="pull-left">Listing Invoices</h2>
+
+<%= link_to "New Invoice", :new_invoice, class:"pull-right btn btn-primary" %>
+<div class="clearfix"></div>
+
+<% @invoices.each do |invoice| %>
+  
+  <div>
+    <%= link_to "Invoice ##{invoice.invoice_id}", invoice %> - <%= invoice.status %>
+  </div>
+<% end %>

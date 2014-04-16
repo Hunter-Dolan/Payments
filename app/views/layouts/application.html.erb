@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
 <head>
   <title>Payments</title>
-  <%= stylesheet_link_tag    "reset", "application", :media => "all" %>
-  <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 </head>
 <body>
-<div id="floater"></div>
-<div id="container">
-	<%= yield %>
-</div>
+  <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+              <%= value %>
+        </div>
+  <% end %>
+
+<% if current_user %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete%>
+<% end %>  
+
+<%= yield %>
+
 </body>
 </html>

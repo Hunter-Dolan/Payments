@@ -1,0 +1,36 @@
+<%= form_for @invoice do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  
+  <div>
+    <%= f.label :invoice_id, "Invoice ID Number" %>
+    <%= f.number_field :invoice_id, class: "form-control" %>
+  </div>
+  
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  
+  <div>
+    <%= f.label :amount %>
+    <%= f.number_field :amount, class: "form-control" %>
+  </div>
+  
+  <div>
+    <%= f.label :invoicee_name %>
+    <%= f.text_field :invoicee_name, class: "form-control" %>
+  </div>
+  
+  <div>
+    <%= f.label :invoicee_address %>
+    <%= f.text_field :invoicee_address, class: "form-control" %>
+  </div>
+  
+  <br>
+  
+  <%= f.submit "Submit", class:"btn btn-primary" %>
+
+<% end %>

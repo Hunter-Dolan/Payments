@@ -1,0 +1,16 @@
+<h2>View Invoice</h2>
+
+<% [:name, :invoice_id, :description, :amount, :invoicee_name, :invoicee_address, :status].each do |field| %>
+  
+  <div>
+    <h4><%= field.to_s.humanize %></h4>
+    <p><%= @invoice.send(field) %>
+  </div>
+
+<% end %>
+
+  <h4>Pay URL</h4>
+  <input type="text" class="form-control" value="<%=invoice_pay_url(@invoice)%>">
+
+  <%= link_to "< Back", :invoices %>
+  <%= link_to "Edit", :edit_invoice %>
